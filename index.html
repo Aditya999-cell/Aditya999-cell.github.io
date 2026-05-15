@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aditya Kumar | Portfolio</title>
+    
+    <style>
+        .profile-pic{
+            width: 200px;
+            height: 200px;
+            border-radius:50%; /* Thia turns the square into the circle*/
+            object-fit:cover;/* Ensures the photo isnt stretched or squinshed */
+            border:4px solid white; /* Adds a nice white border*/
+            box-shadow:0 4px 8px rgba(0,0,0,0,2);*/ Adda a subtle shadow */
+            margin-bottom:15px;
+        }
+        /* This is CSS! It tells the browser how to style the HTML tags below */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #474747; /* A light grey background */
+            color: #000000;
+            margin: 0;
+            padding: 35px;
+        }
+        
+        header {
+            text-align: center;
+            background-color: #0000009a; /* A dark, professional blue/grey */
+            color: rgb(185, 185, 185);
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background-color: rgb(192, 192, 192);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Adds a soft 3D shadow */
+            transition:transform 0.3s ease,box-shadow 0.3s ease;
+        }
+
+        h2 {
+            color: #1a252c;
+            border-bottom: 3px solid #007bff; /* Adds a blue underline to headings */
+            padding-bottom: 5px;
+        }
+        
+        a {
+            color: #007bff;
+            text-decoration: burlywood;
+            font-weight: bold;
+            transition:color 0.3s ease;
+        }
+        section:hover {
+            transform:translateY(-5px);
+            box-shadow:0 10px 20px rgba(0,0,0,0,1);
+        }
+        a:hover {
+            color:#0056b3;
+            text-decoration:underline;
+        }
+        .profile-pic {
+            transition:transform 0.4s ease;
+        }
+        .profile-pic:hover {
+            transform:scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="profile.JPEG" alt="Aditya kr profile picture" class="profile-pic">
+        <h1>Aditya Kumar</h1>
+        <p>BCA Student | Aspiring Software Developer</p>
+    </header>
+
+    <!-- About Section -->
+    <section>
+        <h2>About Me</h2>
+        <p>Hello! I am a second-year Bachelor of Computer Applications student. I am passionate about software development, problem-solving, and currently seeking undergraduate internship opportunities to apply my skills in a real-world environment.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>HTML & CSS (Currently Learning!)</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Employee Management System:</strong> Built using Python and Tkinter.</li>
+            <li><strong>Route and Expedition Logger:</strong> Developed in Java.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:kumaraditya72753@gmail.com">kumaraditya72753@gmail.com</a></p>
+        <p><a href="resume.JPEG" target="_blank">Click to see My Resume</a></p>
+    </section>
+
+    <!--Adding a footer-->
+    <footer>
+        <p>&copy; 2026 Aditya Kr.All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
