@@ -10,7 +10,7 @@
             height: 200px;
             border-radius:50%; /* Thia turns the square into the circle*/
             object-fit:cover;/* Ensures the photo isnt stretched or squinshed */
-            border:4px solid white; /* Adds a nice white border*/
+            border:4px solid rgb(67, 59, 0); /* Adds a nice white border*/
             box-shadow:0 4px 8px rgba(0,0,0,0,2);*/ Adda a subtle shadow */
             margin-bottom:15px;
         }
@@ -24,31 +24,49 @@
         }
         
         header {
+            position: relative; /* This is required for the background layer to position correctly */
             text-align: center;
-            background-color: #0000009a; /* A dark, professional blue/grey */
-            color: rgb(185, 185, 185);
+            color: white;
             padding: 40px 20px;
             border-radius: 10px;
             margin-bottom: 20px;
+            overflow: hidden; /* This keeps the blurred image neatly inside your rounded corners */
+            z-index: 1; /* Keeps your text and profile photo on top */
+        }
+
+        /* This creates the blurred background layer */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Make sure this file name exactly matches the image you uploaded! */
+            background-image: url('header-bg.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px) brightness(0.6); /* Blurs the image and darkens it so your white text is easy to read */
+            z-index: -1; /* Pushes the background layer behind everything else */
         }
 
         section {
-            background-color: rgb(192, 192, 192);
+            background-color: rgb(71, 53, 81);
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Adds a soft 3D shadow */
+            box-shadow: 0 4px 6px rgba(210, 210, 210, 0.05); /* Adds a soft 3D shadow */
             transition:transform 0.3s ease,box-shadow 0.3s ease;
         }
 
         h2 {
-            color: #1a252c;
-            border-bottom: 3px solid #007bff; /* Adds a blue underline to headings */
+            color: #9a9a9a;
+            border-bottom: 3px solid #aa00ff; /* Adds a blue underline to headings */
             padding-bottom: 5px;
         }
         
         a {
-            color: #007bff;
+            color: #696969;
             text-decoration: burlywood;
             font-weight: bold;
             transition:color 0.3s ease;
@@ -58,7 +76,7 @@
             box-shadow:0 10px 20px rgba(0,0,0,0,1);
         }
         a:hover {
-            color:#0056b3;
+            color:#ffffff;
             text-decoration:underline;
         }
         .profile-pic {
@@ -74,6 +92,29 @@
             color: #ffffff;
             font-size: 0.9em;
         }
+        /* Grid layout for the skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* This creates two equal columns */
+            gap: 15px; /* Adds space between the skills */
+            list-style-type: none; /* Removes the standard bullet points */
+            padding: 0;
+        }
+
+        /* Styling each individual skill box */
+        .skills-grid li {
+            background-color: #a0a0a0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            border-left: 4px solid #40a77c; /* Adds a nice blue accent line */
+            transition: transform 0.2s ease;
+        }
+
+        .skills-grid li:hover {
+            transform: scale(1.05); /* Slight pop effect when hovered */
+        }
     </style>
 
 </head>
@@ -81,7 +122,7 @@
 
     <!-- Header Section -->
     <header>
-        <img src="profile.jpeg" alt="Aditya kr profile picture" class="profile-pic">
+        <img src="profile.JPEG" alt="Aditya kr profile picture" class="profile-pic">
         <h1>Aditya Kumar</h1>
         <p>BCA Student | Aspiring Software Developer</p>
     </header>
@@ -95,11 +136,15 @@
     <!-- Skills Section -->
     <section>
         <h2>Technical Skills</h2>
-        <ul>
+        <ul class="skills-grid">
             <li>Python</li>
             <li>Java</li>
             <li>SQL</li>
-            <li>HTML & CSS (Currently Learning!)</li>
+            <li>HTML & CSS</li>
+            <li>DSA</li>
+            <li>C+</li>
+            <li>DBMS</li>
+            <li>JavaScript</li>
         </ul>
     </section>
 
@@ -107,8 +152,8 @@
     <section>
         <h2>Projects</h2>
         <ul>
-            <li><strong>Employee Management System:</strong> Built using Python and Tkinter.</li>
-            <li><strong>Route and Expedition Logger:</strong> Developed in Java.</li>
+            <li><strong>Wallpaper Service Platform:- </strong>Independent Project, Designed and developed by dynamic web appilcation to serve high quality wallpapers, Applied software engineering principles to structure the codebase and manage the distribution of digital assets effectively.</li>
+            <li><strong>Personal Portfolio Website:-</strong> Developed a responsive portfolio website to showcase my details, skills, experience,etc Build with HTML, CSS.</li>
         </ul>
     </section>
 
@@ -116,7 +161,7 @@
     <section>
         <h2>Contact</h2>
         <p>Email: <a href="mailto:kumaraditya72753@gmail.com">kumaraditya72753@gmail.com</a></p>
-        <p><a href="resume.jpeg" target="_blank">Click to see My Resume</a></p>
+        <p><a href="resume.JPEG" target="_blank">Click to see My Resume</a></p>
     </section>
 
     <!--Adding a footer-->
